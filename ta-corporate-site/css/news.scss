@@ -1,0 +1,249 @@
+@charset "utf-8";
+
+html {
+font-size: 62.5%;
+}
+
+@mixin fontsize($size: 24, $base: 10) {
+font-size: $size + px;
+font-size: ($size / $base) * 1rem;
+}
+
+$blue1 : #42b9d0;
+$blue2 : #339fd1;
+$gray_blue : #eaf2f4;
+
+/**************************************/
+
+#sub_cover {
+  background-image: url(../images/news/sub_cover@2x.jpg);
+  padding: 40px 0;
+  background-size: cover;
+  
+  .container {
+     position :relative;
+     width: 100%;
+     max-width: 960px;
+     margin: 0 auto;
+     padding: 0 20px;
+     box-sizing: border-box;
+  }
+  
+  h2 {
+    text-align: center;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 0;
+    letter-spacing: 0.2rem;
+    line-height: 1.25;
+  }
+}
+
+// desktop(#sub_cover)
+@media (min-width: 550px) {
+  
+  #sub_cover {
+    background-image: url(../images/news/sub_cover.jpg);
+    padding: 80px 0;
+    background-size: cover;
+    
+    h2 {
+      text-align: center;
+      color: white;
+      font-size: 3.2rem;
+      font-weight: bold;
+      margin: 0;
+      letter-spacing: 0.2rem;
+    }
+  }
+}
+
+#contents {
+  padding-top: 20px;
+  
+  #main {
+    
+    .news-title {
+      color: #42b9d0;
+      border-bottom: 3px solid;
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+    }
+    
+    .company_title {
+      color: #42b9d0;
+      border-bottom: 3px solid;
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding-bottom: 15px;
+      margin: 0;
+    }
+    
+    table th {
+      color: #626262;
+      padding: 20px 0;
+    }
+    table td {
+      color: #626262;
+      padding: 20px 0;
+      //padding-left: 30px;
+      @media (min-width: 550px) {
+        padding-left: 0;
+      }
+    }
+    
+    .news_li {
+      font-size: 1.5rem;
+      list-style: none;
+      
+      span {
+        color: #42b9d0;
+        display: block;
+        font-weight: bold;
+        margin-bottom: 3px;
+      }
+    }
+    
+    .company_info_right, .company_info_left {
+      font-size: 1.4rem;
+      td {
+        padding-left: 10px;
+      }
+      p {
+        margin: 0;
+      }
+    }
+    .company_info_left {
+      padding-right: 20px;
+    }
+
+    // desktop
+    @media (min-width: 550px) {
+      .company_info_left {
+        padding-right: 20px
+      }
+    }
+  }
+
+  .container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  }
+}
+
+// desktop
+@media (min-width: 550px) {
+  #contents {
+    padding-top: 35px;
+    padding-bottom: 70px;
+    
+    .container {
+      width: 90%;
+      padding: 0;
+    }
+
+    #main {
+      padding-left: 0;
+      padding-right: 20px;
+      
+      .news-title {
+        font-size: 2rem;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+      }
+      
+      .company_title {
+        font-size: 2rem;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        margin: 0;
+      }
+      
+      .news_li li {
+        @include fontsize(15);
+        list-style: none;
+        padding-bottom: 5px;
+        
+        span {
+          display: inline-block;
+          margin-bottom: 0;
+          padding-right: 10px;
+          color: #42b9d0;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+#contents #sidebar {
+  padding-bottom: 20px;
+  
+  .pc_sidemenu h3, .pc_sidemenu ul, {
+    display: none;
+  }
+  
+  .pc_sidemenu .fb-page {
+    width: 100%;
+  }
+}
+
+// desktop
+@media (min-width: 550px) {
+  
+  #contents .container {
+      
+    width: 80%;
+    #sidebar {
+      .pc_sidemenu {
+        
+        ul {
+          display: block; 
+        }
+
+        h3 {
+          display: block; 
+          color: #42b9d0;
+          font-size: 1.4rem;
+          letter-spacing: 0.2rem;
+          font-weight: bold;
+          background-color: #f3f9fb;
+          padding: 15px;
+          margin-bottom: 0px;
+        }
+        
+        li {
+          list-style: none;
+          display: block;
+          border-bottom: 1px solid #e5e5e5;
+          background-repeat: no-repeat;
+          background-position: 8px center;
+          margin-bottom: 0px;
+          padding: 10px 10px 10px 20px;
+          background-image:url("../images/news/side_arrow.png");
+          background-size: 4px 8px;
+          
+          a {
+            text-decoration: none;
+          }
+        }
+        
+        .fb-page {
+          width: 100%;
+        }
+      }
+    } 
+  }
+}
+
+h1{
+  margin: 0;
+  padding: 0;
+}
